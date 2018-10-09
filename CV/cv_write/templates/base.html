@@ -1,0 +1,225 @@
+{% load staticfiles  %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>blog</title>
+  </head>
+  <body>
+
+  <style>
+      .career h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+        .edu h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+           .project h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+        .programming h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+         .language h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+
+          .personal h3{
+          color: #f5f5f5;
+          background-color: #849c9c;
+          padding: 10px;
+          text-align: center;
+
+      }
+          .personal p,li{
+        margin-top: 20px;
+      }
+
+      .programming p,li{
+        margin-top: 20px;
+      }
+
+      .language p,li{
+        margin-top: 20px;
+      }
+
+      .project p,li{
+        margin-top: 20px;
+      }
+      .career p{
+          font-size: 15px;
+          margin-top: 20px;
+      }
+  </style>
+       <section class="image">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                       {% for title in title %}
+                         {% if title.image %}
+			        	<img src="{{ title.image.url }}" alt="">
+
+				        <h2>{{ title.name }}</h2>
+                        <p>{{ title.address }}<p>
+                         <b><p>Email: {{ title.email }}</p></b>
+                         <b><p> Cell no: {{ title.phone }}</p></b>
+                        {% endif %}
+                         {% endfor %}
+                   </div>
+               </div>
+               </div>
+       </section>
+
+       <section class="career">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                       {% for career in career %}
+                           <h3 class="title">{{ career.title }}</h3>
+                           <p>{{ career.Career_Objective }}</p>
+                         {% endfor %}
+                   </div>
+                </div>
+           </div>
+       </section>
+
+         <section class="edu">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                       {% for edu in edu %}
+                           <h3 class="title">{{ edu.title }}</h3>
+                          <b><p>Bachelor of Science :  {{ edu.Bachelor_of_Science }}</p></b>
+                          <b><p>Institution         :         {{ edu.Institutionu }}</p></b>
+                          <b><p>Session             :         {{ edu.session }}</p></b><br>
+                          <b><p> {{ edu.HSC }}</p></b>
+                          <b><p>Background    :  {{ edu.Backgroundh }}</p></b>
+                          <b><p>Institution :  {{ edu.Institutionh }}</p></b>
+                          <b><p>Board :  {{ edu.Boardh }}</p></b>
+                          <b><p>Result :  {{ edu.resulth }}</p></b>
+                          <b><p>Passingyear :  {{ edu.passingyearh }}</p></b><br>
+                          <b><p>{{ edu.SSC }}</p></b>
+                          <b><p>Background :  {{ edu.Backgrounds }}</p></b>
+                          <b><p>Institution :  {{ edu.Institutions }}</p></b>
+                          <b><p>Board :  {{ edu.Boards }}</p></b>
+                          <b><p>Results :  {{ edu.results }}</p></b>
+                          <b><p>Passingyears:  {{ edu.passingyears }}</p></b>
+                         {% endfor %}
+                   </div>
+                </div>
+           </div>
+       </section>
+
+
+         <section class="programming">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                       {% for program in program %}
+                           <h3 class="title">{{ program.title }}</h3>
+                           <b><p><li>{{ program.python }}</li> <p></b>
+                           <b><p><li>{{ program.android }}</li><p></b>
+                           <b><p><li>{{ program.c }}</li><p></b>
+                           <b><p><li>{{ program.html }}</li><p></b>
+                         {% endfor %}
+                   </div>
+                </div>
+           </div>
+       </section>
+
+         <section class="language">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                       {% for language in language %}
+                           <h3 class="title">{{ language.title }}</h3>
+                           <b><p><li>{{ language.english }}</li> <p></b>
+                           <b><p><li>{{ language.expert }}</li><p></b>
+                           <b><p><li>{{ language.word }}</li><p></b>
+                         {% endfor %}
+                   </div>
+                </div>
+           </div>
+       </section>
+
+        <section class="project">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                           <h3 class="title">Project Before Done </h3>
+                           <b><p>1.	https://github.com/jhSourav/blog-post-with-login_registration<p></b>
+                           <b><p>2.	https://github.com/jhSourav/cost_management<p></b>
+                           <b><p>3.	https://github.com/jhSourav/web2<p></b>
+                   </div>
+                </div>
+           </div>
+       </section>
+
+  <section class="personal">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+                           <h3 class="title">Personal Information </h3>
+                           <b><p>Father’s name  :  Mosharraf hossain</p></b>
+                          <b><p>Mother name         : Reshma Begum</p></b>
+                          <b><p>Nationality             : Bangladeshi</p></b>
+                          <b><p> Religion:Islam</p></b>
+                          <b><p>Height    : 5.7"</p></b>
+                          <b><p>Permanent Address : puran bajar, chandpur</p></b><br><br>
+
+
+                   </div>
+                </div>
+           </div>
+       </section>
+
+
+          <section class="signature">
+           <div class="container">
+               <div class="row">
+                   <div class="col-sm-12">
+
+
+                       <p>Signatire </p>
+                       <p>sourav </p>
+                       <b><p>................ </p></b>
+
+                   </div>
+                </div>
+           </div>
+       </section>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
